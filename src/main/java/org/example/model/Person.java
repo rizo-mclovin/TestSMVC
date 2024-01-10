@@ -12,23 +12,25 @@ public class Person {
    @Size(min = 2, max = 15, message = "Name should be between 2 and 15 characters!")
    private String name;
 
-
-   @Min(value = 0, message = "Age should be greater than 0!")
-   private int age;
-
    @NotEmpty(message = "Email should not be empty!")
    @Email(message = "Email should be valid!")
    private String email;
 
-   public Person(int id, String name, int age, String email) {
+
+   @NotEmpty(message = "Address should not be empty!")
+   private String address;
+
+   public Person(int id, String name, String email, String address) {
       this.id = id;
       this.name = name;
-      this.age = age;
       this.email = email;
+      this.address = address;
    }
 
    public Person() {
    }
+
+
 
    public int getId() {
       return id;
@@ -46,13 +48,6 @@ public class Person {
       this.name = name;
    }
 
-   public int getAge() {
-      return age;
-   }
-
-   public void setAge(int age) {
-      this.age = age;
-   }
 
    public String getEmail() {
       return email;
@@ -60,5 +55,13 @@ public class Person {
 
    public void setEmail(String email) {
       this.email = email;
+   }
+
+   public String getAddress() {
+      return address;
+   }
+
+   public void setAddress(String address) {
+      this.address = address;
    }
 }
